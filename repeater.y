@@ -83,9 +83,9 @@ repeatype symbolVal(char* symbol){
     int i = 0;
     repeatype out;
 
-    while(strcmp(symbols[i].id, symbol)) i++; // aumenta i hasta llegar al struct con id=symbol
-    out.str = symbols[i].str;   // Copia el puntero, no se si conviene esto o strdup() pero ya fue
-    out.id = symbols[i].id;     // lo mismo
+    while(strcmp(symbols[i].id, symbol) != 0) i++; // aumenta i hasta llegar al struct con id=symbol
+    out.str = strdup(symbols[i].str);
+    out.id = strdup(symbols[i].id);
     out.num = symbols[i].num;
 
     return out;
@@ -95,7 +95,7 @@ void updateSymbolVal(char* symbol, char* s, int n){
     // ineficiencia parte 2
     int i = 0;
 
-    for (i; symbols[i].num==0; i++)
+    for (i; symbols[i].num!=0; i++)
         ; // forma graciosa de escribir un while, porque tenia ganas
     symbols[i].num = n;
     symbols[i].str = strdup(s);
