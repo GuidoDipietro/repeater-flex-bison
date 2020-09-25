@@ -75,3 +75,12 @@ bison -yd repeater.y
 gcc lex.yy.c y.tab.c -o repeater
 ```
 O bien ejecutando el batchfile `compilar.bat` que hace lo mismo.
+
+# Ejecutar
+Para usarlo en consola, solamente hay que ejecutar el archivo `repeater.exe` que se generará tras compilar los archivos de Flex y Bison (o solo `repeater` en algunos SOs), y jugar allí.
+
+Para ejecutar un programa contenido en un archivo, por lo pronto hacerlo de la siguiente manera:  
+
+- Crear un archivo llamado `programa.rpt` (cualquier nombre, o usar el que subí como ejemplo)
+- Ejecutar `repeater < programa.rpt`
+- Sonreír
